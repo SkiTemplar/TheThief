@@ -381,7 +381,8 @@ void AVillagerCharacter::UpdateWidgetIcon()
 	}
 	else if (CurrentVillagerState == EVillagerState::Fleeing || CurrentVillagerState == EVillagerState::AlertingGuard)
 	{
-		CurrentWidgetIcon = ENPCWidgetIcon::Alert;
+		// Si está huyendo/alertando Y tiene moneda, mostrar AlertWithCoin
+		CurrentWidgetIcon = bHasCoin ? ENPCWidgetIcon::AlertWithCoin : ENPCWidgetIcon::Alert;
 	}
 	else if (bIsTalking)
 	{
